@@ -64,7 +64,7 @@ function generatePassword() {
     return "";
   }
 
-  // prompt for character sets
+  // prompt for character set
   var includeLowercase = confirm("Include lowercase letters?");
   var includeUppercase = confirm("Include uppercase letters?");
   var includeNumbers = confirm("Include numbers?");
