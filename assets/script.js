@@ -65,17 +65,35 @@ function generatePassword() {
   }
 
   // prompt for character set
-  var includeLowercase = confirm("Include lowercase letters?");
-  var includeUppercase = confirm("Include uppercase letters?");
-  var includeNumbers = confirm("Include numbers?");
-  var includeSpecialCharacters = confirm("Include special characters?");
+  var includeLowercase = prompt ("Include lowercase letters?");
+  var includeUppercase = prompt("Include uppercase letters?");
+  var includeNumbers = prompt("Include numbers?");
+  var includeSpecialCharacters = prompt("Include special characters?");
 
   // Validate that the user has chosen at least one character set
   if (!includeLowercase && !includeUppercase && !includeNumbers && !includeSpecialCharacters) {
     alert("Please choose at least one character set.");
     return "";
   }
-}
+  var password="";
+  if (includeLowercase) {
+    password +=lowercaseLetters.charAt(Math.floor(math.random()*lowercaseLetters));
+  }
+  if (includeUppercase) {
+    password +=uppercaseLetters.charAta(Math.floor(math.random()*uppercaseLetters));
+  }
+  if (includeNumbers) {
+    password +=numbers.charAt(Math.floor(math.random()*numbers));
+  }
+  if (includeSpecialCharacters) {
+    password +=specialCharacters.charAt(Math.floor(math.random()*specialCharacters));
+  }
+  for (var i = password.length; i < passwordLength; i++) {
+    password += allCharacters.charAt(Math.floor(math.random()*allCharacters));
+  }
+  return password;
 
+}
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
